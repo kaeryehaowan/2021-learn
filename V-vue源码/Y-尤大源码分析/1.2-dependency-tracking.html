@@ -1,0 +1,26 @@
+<script>
+  const dep = new Dep;
+  autorun(() => {
+    dep.depend()
+    console.log('updated')
+  })
+  // 打印 'updated'
+
+  dep.notify()
+  // 打印 'updated'
+
+
+  // 答案
+  window.Dep = class Dep {
+    depend() {
+
+    }
+    notify() {
+
+    }
+  }
+
+  function autorun(update) {
+
+  }
+</script>

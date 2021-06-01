@@ -1,0 +1,27 @@
+<script>
+  function convert(obj) {
+    // ...
+  }
+  var o = {b: 1}
+  convert(o)
+  o.b; // 打印 'getter value 1'
+  o.b = 2; // 打印 'setter value 2'
+  o.b; // 打印 'getter value 2'
+
+  // 答案
+  function convert(obj) {
+    Object.keys(obj).forEach(k=>{
+      let internalValue = obj[k];
+      Object.defineProperty(obj, k, {
+        get () {
+          console.log(`getter value ${internalValue}`)
+          return internalValue
+        },
+        set (value) {
+          console.log(`setter value ${value}`)
+          internalValue = value
+        }
+      })
+    })
+  }
+</script>
