@@ -1,0 +1,5 @@
+div {
+  width: 20px;
+  background-color: gold;
+  transform: translate(50%);
+}
