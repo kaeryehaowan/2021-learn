@@ -27,6 +27,10 @@
 11. copy-webpack-plugin 拷贝静态资源
 12. optimize-css-assets-webpack-plugin 压缩css
 13. uglifyjs-webpack-plugin 压缩js
+14. cache-loader 编译缓存
+15. webpack-parallel-uglify-plugin 增强压缩
+16. happypack 开启子进程
+17. webpack-bundle-analyzer 体积分析
 
 
 ## webpack 优化方向
@@ -34,7 +38,17 @@
 2. 优化打包速度，
     1. 合理的配置mode参数与devtool参数，mode可设置development production两个参数，如果没有设置，webpack4 会将 mode 的默认值设置为 production ，production模式下会进行tree shaking(去除无用代码)和uglifyjs(代码压缩混淆)
     2. 缩小文件的搜索范围(配置include exclude alias noParse extensions)，alias配置可以减少递归查询，include与exclude让搜索解析时范围变小，noParse配置忽略解析外部依赖，也可以减少解析时间。extensions配置明确的后缀文件，也是缩小解析范围
+    3. 使用 happypack 开启子进程，并行处理部分任务
+    4. 使用 webpack-parallel-uglify-plugin 优化压缩时间
+    5. 抽离不会变动的第三方模块，把第三方模块打包到本地一个单独的位置
+    6. 使用 cache-loader 设置缓存
+3. 优化打包体积
+    1. 配置 externals，把cdn的依赖从打包中移除
+    2. 使用 Tree-shaking，用树摇把无用代码移除
+    3. 合理分离 chunk/bundle，例如，runtime抽离
+
 
 ## webpack [plugin、loader]
+
 
 ## webpack 原理
