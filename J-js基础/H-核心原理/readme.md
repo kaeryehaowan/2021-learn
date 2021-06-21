@@ -1,0 +1,42 @@
+- undefined 是一个全局属性，null 是一个关键字
+    - 因为 undefined 是一个全局只读属性，所以 delete undefined 就返回 false,而 null 是一个关键字，原始值，所以 delete null 返回 true,类似 delte 0 一样。
+- js 里声明变量的方式
+    - var
+    - let 
+    - const
+    - import （底层是按const来实现的）
+    - class （底层是按let来实现的）
+    - function 
+    - try/catch的catch子句
+    - function作用域的形参
+- 变量作用域(varNames)：var 和 function 声明的变量
+- 词法作用域(lexicalNames)：let、const、import、class
+- let const 声明的变量，在声明前不能访问，这被称为暂时性死区，原因并不是因为这个变量不存在，而是因为这个标识符在声明前被拒绝访问。它也会跟var声明的变量一样，在编译阶段就准备好了，放在上下文中的变量对象上。
+    - 在 ECMAScript 6 之后出现的let/const变量在“声明（和创建）一个标识符”这件事上，与var并没有什么不同，只是 JavaScript 拒绝访问还没有绑定值的let/const标识符而已。
+    - 允许访问未绑定值的标识符，我们称为 变量声明，不允许访问的，我们称为 词法声明
+- 变量泄漏
+    - 当向一个未声明的变量赋值时，js会在全局声明这个变量。这就是变量泄漏。
+- 全局变量的区别
+    - 使用var(let/const)声明的全局变量是不可删除的，在编译阶段，v8会把var声明的变量统一放到一个变量列表里维护好，这个列表里的变量描述属性里，configurable为false。
+    - 因变量泄漏声明的全局变量是可以删除的，它的configurable为true。
+- switch语句不论有多少case分支，它们都在同一个块级作用域里。
+- 所有在语句内可以存在的东西只有四种：
+    - 表达式
+    - 其它语句
+    - 标识符声明（取决于声明语句或其它的隐式声明的方式）
+    - 一种特殊的语法元素，称为“标签（例如标签化语句，或 break 语句指向的目标位置）”
+- 函数调用、语句的执行，最终都会得到一个result，这个result类型有五种。
+    - normal，正常完成
+    - break，中断，一般中断时，会有一个labelName
+    - continue，循环过程中的继续下次迭代
+    - return，一个函数调用的返回
+    - throw，异常
+
+- 类、函数、方法、构造器，在 ECMAScript 6 之后，函数可以简单地分为三个大类：
+    - 类：只可以做 new 运算；
+    - 方法：只可以做调用“( )”运算；
+    - 一般函数：（除部分函数有特殊限制外，）同时可以做 new 和调用运算。
+- 其中，典型的“方法”在内部声明时，有三个主要特征：
+    - 具有一个名为“主对象[[HomeObject]]”的内部槽；
+    - 没有名为“构造器[[Construct]]”的内部槽；
+    - 没有名为“prototype”的属性。
