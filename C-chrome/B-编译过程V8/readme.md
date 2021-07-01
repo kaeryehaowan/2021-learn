@@ -6,8 +6,8 @@ V8 是一个由 Google 开发的开源 JavaScript 引擎，目前用在 Chrome �
     - 堆空间
     - 栈空间
     - 全局执行上下文
-        - 变量环境
-        - 词法环境
+        - 变量环境(管理 var function 声明的变量)
+        - 词法环境(管理 let const class import 声明的变量)
         - this值
         - 外部环境
     - 全局作用域
