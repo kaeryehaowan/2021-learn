@@ -40,3 +40,8 @@
     - 具有一个名为“主对象[[HomeObject]]”的内部槽；
     - 没有名为“构造器[[Construct]]”的内部槽；
     - 没有名为“prototype”的属性。
+- 对象内部槽
+ - [[Protype]] 原型内部槽
+ - [[Call]] 调用内部槽
+ - [[Construct]] 构造器内部槽
+ - [[HomeObject]] 主对象内部槽
