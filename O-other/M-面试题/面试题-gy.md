@@ -116,9 +116,53 @@ flex布局就是弹性布局，使用弹性布局后，内部子项可以根据�
 
 JS
 1. 怎么理解闭包
+```
+闭包是为了弥补静态作用域的，在js引擎预解析时会把闭包标识出来，后续在gc时，不会被回收。有这种标识的会被挂载在一个内部 [[Closure]] 引用上，这个引用就是闭包，它是在堆上的。
+```
+
 2. 说说 javascript 的继承机制
+```js
+// js里仅能依靠原型链来继承。在构造函数上会有一个 prototype 属性，这个属性的内容，会被实例通过 __proto__ 访问到，全部实例访问的原型均是这一个，这就可以实现继承。
+
+// 父类
+function F(n){
+  console.log('调用父类')
+  this.n = n
+}
+F.prototype.colors = ['red','green']
+
+// 子类
+function C(n,m){
+  console.log('调用子类')
+  this.m = m;
+  // 继承父类实例属性
+  F.call(this,n)
+}
+
+// 继承父类原型
+var p = Object.create(F.prototype)
+C.prototype = p
+C.prototype.constructor = C
+
+// 扩展子类原型
+C.prototype.cList = ['a','b','c']
+
+// 实例化
+var c = new C('父类','子类')
+console.log(c)
+```
+
 3. 怎么理解函数式编程
+```
+函数式编程需要保证函数的纯粹性，没有副作用，如果入参相同，那么返回结果就一定相同。同时，把操作原子化。
+```
+
 4. 怎么理解 event loop
+```
+浏览器里的 event loop
+node 中的 event loop
+```
+
 5. javascript 的执行机制是怎样的
 6. 异步编程有多少种方案，区别是什么
 7. CommonJs 和 ESModule 有什么区别
