@@ -75,7 +75,9 @@ CSS
 ```
 
 2. 怎么理解 BFC
+[规范文档](https://www.w3.org/TR/CSS21/visuren.html#block-formatting)
 ```
+除了 BFC 还有  IFC
 块级格式化上下文，当一个元素拥有的是BFC时，它自身内部的布局和它自身与相邻元素的关系都会受影响，一般常见的就是子元素float后高度塌陷，还有就是自身与相邻元素在垂直方向的margin重叠问题。
 display的大部分值，不是block、inline，一般都可以。
 overflow: hidden;

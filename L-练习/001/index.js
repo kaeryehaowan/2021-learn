@@ -20,6 +20,8 @@
  * var a = {}
  * a.myApply
  * 6、那最终答案就在 Function.prototype 上加 myApply 
+ * 7、需要注意的是，传入的第一个参数，需要做容错判断，为 undefined null 时，默认为 global(浏览器里为window);
+ * 当这个参数为基础类型时，需要用对应的类型构造器包装成对应的对象
  */
 
 // 答案:
