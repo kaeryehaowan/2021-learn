@@ -73,7 +73,7 @@ webpack是一个打包工具，通过分析引用关系，按照规则拆分出c
     - 使用 Module 和 Dependency 管理代码模块相互关系 -> 
     - 使用 Template 基于 Compilation 的数据生成结果代码 ->
 
-- 弄清楚 compiler 与 complilation
+- 弄清楚 compiler 与 compillation
 - loader 与 plugin 执行关系。(创建 Compiler -> addEntry -> _addModuleChain -> moduleFactory -> 创建 Module -> 调用 buildModule -> 调用 runLoader -> 触发 loader)
 
 ## 建议
