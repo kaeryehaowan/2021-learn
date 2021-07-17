@@ -391,6 +391,7 @@ webpack是模块打包，启动一个webpack，编译module，生成chunk, 导�
 ```
 
 6. tree shaking 是什么，如何支持
+
 ```
 消除未被使用的引用
 
@@ -399,8 +400,22 @@ webpack是模块打包，启动一个webpack，编译module，生成chunk, 导�
 NodeJs
 
 1. 介绍一下 Node 的主要特点
+
+```
+单线程、非阻塞I/O、事件循环
+```
+
 2. Node 是如何做到跨平台的
+
+```
+Libuv 与 v8 都是跨平台的，所以使用 node 时，就不会需要区分 windows linux
+```
+
 3. 怎么理解 Stream，它有什么意义
+```
+流，可操作的片段单元是极小的，这就会很自由
+```
+
 4. 是否有企业级 Node 项目经验，有什么心得
 5. 介绍一下 Node 的模块系统
 6. 如果提升 Node 项目的健壮性
